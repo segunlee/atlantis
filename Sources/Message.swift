@@ -8,6 +8,7 @@
 
 import Foundation
 
+@available(iOS 13.0, *)
 struct Message: Codable {
 
     enum MessageType: String, Codable {
@@ -48,7 +49,7 @@ struct Message: Codable {
 }
 
 // MARK: - Serializable
-
+@available(iOS 13.0, *)
 extension Message: Serializable {
 
     func toData() -> Data? {

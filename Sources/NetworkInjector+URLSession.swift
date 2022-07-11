@@ -11,7 +11,7 @@ import Foundation
 func logError(name: String) {
     print("❌ [Atlantis] Could not swizzle this func: \(name)! It looks like the latest iOS (beta) has changed, please contact support@proxyman.io")
 }
-
+@available(iOS 13.0, *)
 extension NetworkInjector {
 
     func _swizzleURLSessionResumeSelector(baseClass: AnyClass) {
@@ -192,7 +192,7 @@ extension NetworkInjector {
 }
 
 // MARK: - Upload
-
+@available(iOS 13.0, *)
 extension NetworkInjector {
 
     func _swizzleURLSessionUploadSelector(baseClass: AnyClass) {
@@ -341,7 +341,7 @@ extension NetworkInjector {
 }
 
 // MARK: - WebSocket
-
+@available(iOS 13.0, *)
 extension NetworkInjector {
 
     func _swizzleURLSessionWebsocketSelector() {
@@ -458,6 +458,7 @@ extension NetworkInjector {
         method_setImplementation(method, imp_implementationWithBlock(block))
     }
 
+    @available(iOS 13.0, *)
     private func _swizzleURLSessionWebSocketCancelWithCloseCodeReasonSelector(_ baseClass: AnyClass) {
 
         // Prepare
@@ -491,6 +492,7 @@ extension NetworkInjector {
         method_setImplementation(method, imp_implementationWithBlock(block))
     }
 
+    @available(iOS 13.0, *)
     private func wrapWebSocketMessage(object: AnyObject) -> URLSessionWebSocketTask.Message? {
         if let strValue = object.value(forKey: "string") as? String {
             return URLSessionWebSocketTask.Message.string(strValue)

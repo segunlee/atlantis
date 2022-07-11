@@ -41,7 +41,7 @@ struct ConnectionPackage: Codable, Serializable {
         return nil
     }
 }
-
+@available(iOS 13.0, *)
 public final class TrafficPackage: Codable, CustomDebugStringConvertible, Serializable {
 
     public enum PackageType: String, Codable {
@@ -327,6 +327,7 @@ public struct CustomError: Codable {
     }
 }
 
+@available(iOS 13.0, *)
 public struct WebsocketMessagePackage: Codable, Serializable {
 
     public enum MessageType: String, Codable {

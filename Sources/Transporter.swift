@@ -36,6 +36,7 @@ extension Serializable {
     }
 }
 
+@available(iOS 13.0, *)
 final class NetServiceTransport: NSObject {
 
     struct Constants {
@@ -86,7 +87,7 @@ final class NetServiceTransport: NSObject {
 }
 
 // MARK: - Transporter
-
+@available(iOS 13.0, *)
 extension NetServiceTransport: Transporter {
 
     func start(_ config: Configuration) {
@@ -194,7 +195,7 @@ extension NetServiceTransport: Transporter {
 }
 
 // MARK: - Private
-
+@available(iOS 13.0, *)
 extension NetServiceTransport {
 
     private func connectToService(_ service: NetService) {
@@ -293,7 +294,7 @@ extension NetServiceTransport {
 }
 
 // MARK: - NetServiceBrowserDelegate
-
+@available(iOS 13.0, *)
 extension NetServiceTransport: NetServiceBrowserDelegate {
 
     func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool) {
@@ -329,7 +330,7 @@ extension NetServiceTransport: NetServiceBrowserDelegate {
 }
 
 // MARK: - NetServiceDelegate
-
+@available(iOS 13.0, *)
 extension NetServiceTransport: NetServiceDelegate {
 
     func netServiceDidResolveAddress(_ sender: NetService) {
@@ -346,7 +347,7 @@ extension NetServiceTransport: NetServiceDelegate {
 }
 
 // MARK: - Private
-
+@available(iOS 13.0, *)
 extension NetServiceTransport {
 
     private func initNotification() {
